@@ -9,10 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var lightMode = false
+    
+    @IBAction func buttonPressed(_ sender: Any) {
+        lightMode = !lightMode
+        
+        refreshUI()
+    }
+    
+    func refreshUI()
+    {
+        if lightMode
+        {
+            view.backgroundColor = .white
+        } else {
+            view.backgroundColor = .black
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        refreshUI()
     }
 
 
