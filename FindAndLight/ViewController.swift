@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     var lightMode = false
     
-    @IBAction func buttonPressed(_ sender: Any) {
+    @IBAction func buttonPressed(_ sender: Any)
+    {
         lightMode = !lightMode
         
         refreshUI()
@@ -19,12 +20,7 @@ class ViewController: UIViewController {
     
     func refreshUI()
     {
-        if lightMode
-        {
-            view.backgroundColor = .white
-        } else {
-            view.backgroundColor = .black
-        }
+        view.backgroundColor = lightMode ? .white : .black
     }
     
     override func viewDidLoad() {
@@ -33,6 +29,9 @@ class ViewController: UIViewController {
         refreshUI()
     }
 
-
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
+    }
 }
 
